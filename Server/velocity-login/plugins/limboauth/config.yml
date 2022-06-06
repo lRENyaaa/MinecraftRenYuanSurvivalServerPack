@@ -1,0 +1,205 @@
+version: "1.0.4"
+# Available serializers:
+# LEGACY_AMPERSAND - "&c&lExample &c&9Text".
+# LEGACY_SECTION - "§c§lExample §c§9Text".
+# MINIMESSAGE - "<bold><red>Example</red> <blue>Text</blue></bold>". (https://webui.adventure.kyori.net/)
+# GSON - "[{"text":"Example","bold":true,"color":"red"},{"text":" ","bold":true},{"text":"Text","bold":true,"color":"blue"}]". (https://minecraft.tools/en/json_text.php/)
+# GSON_COLOR_DOWNSAMPLING - Same as GSON, but uses downsampling.
+serializer: "LEGACY_AMPERSAND"
+prefix: "&f[&6服务器&f] "
+
+# Don't use \n, use {NL} for new line, and {PRFX} for prefix.
+main:
+  # Maximum time for player to authenticate in milliseconds. If the player stays on the auth limbo for longer than this time, then the player will be kicked.
+  auth-time: 60000
+  enable-bossbar: true
+  # Available colors: PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  bossbar-color: "RED"
+  # Available overlays: PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
+  bossbar-overlay: "NOTCHED_20"
+  min-password-length: 4
+  # Max password length for the BCrypt hashing algorithm, which is used in this plugin, can't be higher than 71. You can set a lower value than 71.
+  max-password-length: 71
+  check-password-strength: true
+  unsafe-passwords-file: "unsafe_passwords.txt"
+  online-mode-need-auth: true
+  # Needs floodgate plugin.
+  floodgate-need-auth: false
+  # TOTALLY disables hybrid auth feature
+  force-offline-mode: true
+  # Forces all players to get offline uuid
+  force-offline-uuid: false
+  # Delay in milliseconds before sending auth-confirming titles and messages to the player. (login-premium-title, login-floodgate, etc.)
+  premium-and-floodgate-messages-delay: 1250
+  # Forcibly set player's UUID to the value from the database
+  # If the player had the cracked account, and switched to the premium account, the cracked UUID will be used.
+  save-uuid: true
+  enable-totp: true
+  totp-need-password: true
+  register-need-repeat-password: true
+  change-password-need-old-password: true
+  # Used in unregister and premium commands.
+  confirm-keyword: "confirm"
+  # This prefix will be added to offline mode players nickname
+  offline-mode-prefix: ""
+  # This prefix will be added to online mode players nickname
+  online-mode-prefix: ""
+  # If you want to migrate your database from another plugin, which is not using BCrypt.
+  # You can set an old hash algorithm to migrate from.
+  # AUTHME - AuthMe SHA256(SHA256(password) + salt) that looks like $SHA$salt$hash (AuthMe, MoonVKAuth, DSKAuth, DBA)
+  # AUTHME_NP - AuthMe SHA256(SHA256(password) + salt) that looks like SHA$salt$hash (JPremium)
+  # SHA256_NP - SHA256(password) that looks like SHA$salt$hash
+  # SHA256_P - SHA256(password) that looks like $SHA$salt$hash
+  # SHA512_NP - SHA512(password) that looks like SHA$salt$hash
+  # SHA512_P - SHA512(password) that looks like $SHA$salt$hash
+  # SHA512_DBA - DBA plugin SHA512(SHA512(password) + salt) that looks like SHA$salt$hash (DBA, JPremium)
+  # MD5 - Basic md5 hash
+  # ARGON2 - Argon2 hash that looks like $argon2i$v=1234$m=1234,t=1234,p=1234$hash
+  # MOON_SHA256 - Moon SHA256(SHA256(password)) that looks like $SHA$hash (no salt)
+  # SHA256_NO_SALT - SHA256(password) that looks like $SHA$hash (NexAuth)
+  # SHA512_NO_SALT - SHA512(password) that looks like $SHA$hash (NexAuth)
+  migration-hash: ""
+  # Available dimensions: OVERWORLD, NETHER, THE_END
+  dimension: "THE_END"
+  purge-cache-millis: 3600000
+  purge-premium-cache-millis: 28800000
+  # QR Generator URL, set {data} placeholder
+  qr-generator-url: "https://api.qrserver.com/v1/create-qr-code/?data={data}&size=200x200&ecc=M&margin=30"
+  totp-issuer: "LimboAuth by Elytrium"
+  bcrypt-cost: 10
+  login-attempts: 3
+  ip-limit-registrations: 3
+  totp-recovery-codes-amount: 16
+  # Time in milliseconds, when ip limit works, set to 0 for disable.
+  ip-limit-valid-time: 21600000
+  # Regex of allowed nicknames
+  # ^ means the start of the line, $ means the end of the line
+  # [A-Za-z0-9_] is a character set of A-Z, a-z, 0-9 and _
+  # {3,16} means that allowed length is from 3 to 16 chars
+  allowed-nickname-regex: "^[A-Za-z0-9_]{3,16}$"
+  load-world: false
+  # World file type: schematic (1.12.2 and lower), structure block .nbt (saved in the latest version)
+  world-file-type: "structure"
+  world-file-path: "world.nbt"
+  # Custom isPremium URL
+  # You can use Mojang one's API (set by default)
+  # Or CloudFlare one's: https://api.ashcon.app/mojang/v1/user/%s
+  # Or use this code to make your own API: https://blog.cloudflare.com/minecraft-api-with-workers-coffeescript/
+  # Or implement your own API, it should just respond with HTTP code 200 only if the player is premium
+  ispremium-auth-url: "https://api.mojang.com/users/profiles/minecraft/%s"
+  # If Mojang rate-limits your server, we cannot determine if the player is premium or not
+  # This option allows you to choose whether every player will be defined as premium or as cracked while Mojang is rate-limiting the server
+  # True - as premium; False - as cracked
+  on-rate-limit-premium: true
+  register-command:
+    - "/r"
+    - "/reg"
+    - "/register"
+  login-command:
+    - "/l"
+    - "/log"
+    - "/login"
+  totp-command:
+    - "/2fa"
+    - "/totp"
+  world-coords:
+    x: 0
+    y: 0
+    z: 0
+  cracked-title-settings:
+    fade-in: 10
+    stay: 70
+    fade-out: 20
+    clear-after-login: false
+  premium-title-settings:
+    fade-in: 10
+    stay: 70
+    fade-out: 20
+  strings:
+    reload: "{PRFX}&a成功重载!"
+    reload-failed: "{PRFX}&c重载失败，请查看终端获取详情."
+    error-occurred: "{PRFX}&c发生内部错误."
+    database-error-kick: "{PRFX}&cA database error has occurred!"
+    not-player: "{PRFX}&c您并不能在终端运行此命令…!"
+    not-registered: "{PRFX}&c你还未注册!"
+    cracked-command: "{PRFX}{NL}&aYou can not use this command since your account is &6PREMIUM&a!"
+    wrong-password: "{PRFX}&c密码错误!"
+    nickname-invalid-kick: "{PRFX}{NL}&c你的游戏id包含非法字符，请修改你的游戏id"
+    # 6 hours by default in ip-limit-valid-time
+    ip-limit-kick: "{PRFX}{NL}{NL}&cYour IP has reached max registered accounts. If this is an error, restart your router, or wait about 6 hours."
+    wrong-nickname-case-kick: "{PRFX}{NL}&c你的游戏id大小写错误，游戏id对大小写敏感！"
+    bossbar: "{PRFX}你还有 &6{0} &f秒用于登录."
+    times-up: "{PRFX}{NL}&c登录超时."
+    login-premium: "{PRFX}您已自动登录为认证用户!" # Can be empty.
+    login-premium-title: "{PRFX}欢迎!" # Can be empty.
+    login-premium-subtitle: "&a您已登录为认证用户!" # Can be empty.
+    login-floodgate: "{PRFX}您已自动登录为基岩版用户!" # Can be empty.
+    login-floodgate-title: "{PRFX}欢迎!" # Can be empty.
+    login-floodgate-subtitle: "&a您已登录为基岩版用户" # Can be empty.
+    login: "{PRFX}&a请使用 &6/login <密码>&a登录, 您有 &6{0} &a次尝试机会."
+    login-wrong-password: "{PRFX}&c密码错误, 你还剩 &6{0} &c次尝试机会."
+    login-wrong-password-kick: "{PRFX}{NL}&c密码错误次数过多s!"
+    login-successful: "{PRFX}&a登录成功!"
+    login-title: "&f使用 &6/login <密码>&a登录." # Can be empty.
+    login-subtitle: "&a你有 &6{0} &a次尝试机会." # Can be empty.
+    login-successful-title: "{PRFX}" # Can be empty.
+    login-successful-subtitle: "&a登录成功!" # Can be empty.
+    # Or if register-need-repeat-password set to false remove the "<repeat password>" part.
+    register: "{PRFX}&a请使用 &6/register <密码> <重复密码> 来注册."
+    register-different-passwords: "{PRFX}&c前后密码不一致!"
+    register-password-too-short: "{PRFX}&c密码过短，请更换!"
+    register-password-too-long: "{PRFX}&c密码过长，请更换!"
+    register-password-unsafe: "{PRFX}&c密码不安全，请更换!"
+    register-successful: "{PRFX}&a成功注册!"
+    register-title: "{PRFX}" # Can be empty.
+    register-subtitle: "&a请使用 &6/register <密码> <重复密码> 来注册." # Can be empty.
+    register-successful-title: "{PRFX}" # Can be empty.
+    register-successful-subtitle: "&a成功注册!" # Can be empty.
+    unregister-successful: "{PRFX}{NL}&a成功注销!"
+    unregister-usage: "{PRFX}使用: &6/unregister <当前密码> 以确认."
+    premium-successful: "{PRFX}{NL}&a成功转换为 &6认证&a 账号!"
+    already-premium: "{PRFX}&c您的账号已经是 &6认证&c 账号了!"
+    not-premium: "{PRFX}&c您的账号不是 &6认证&c账号!"
+    premium-usage: "{PRFX}使用: &6/premium <当前密码> 以确认."
+    event-cancelled: "{PRFX}Authorization event was cancelled"
+    force-unregister-successful: "{PRFX}&6{0} &a成功注销!"
+    force-unregister-kick: "{PRFX}{NL}&a你的账户已被管理员注销."
+    force-unregister-not-successful: "{PRFX}&c 玩家 &6{0}&c 注销失败. 很可能此人从未加入过服务器."
+    force-unregister-usage: "{PRFX}用法: &6/forceunregister <玩家id>"
+    change-password-successful: "{PRFX}&a密码修改成功!"
+    # Or if change-password-need-old-pass set to false remove the "<old password>" part.
+    change-password-usage: "{PRFX}用法: &6/changepassword <旧密码> <新密码>"
+    force-change-password-successful: "{PRFX}&a成功修改玩家 &6{0}&a 的密码!"
+    force-change-password-message: "{PRFX}&a你的密码已被管理员改为 &6{0} &a!"
+    force-change-password-not-successful: "{PRFX}&c玩家 &6{0}&c 的密码修改失败. 很可能此人从未加入过服务器."
+    force-change-password-usage: "{PRFX}用法: &6/forcechangepassword <游戏id> <新密码>"
+    totp: "{PRFX}请使用 &6/2fa <密钥> 来输入您的2FA密钥"
+    totp-title: "{PRFX}" # Can be empty.
+    totp-subtitle: "&a使用 &6/2fa <密钥> 来输入您的2FA密钥" # Can be empty.
+    totp-successful: "{PRFX}&a成功启用 2FA!"
+    totp-disabled: "{PRFX}&a成功禁用 2FA!"
+    # Or if totp-need-pass set to false remove the "<current password>" part.
+    totp-usage: "{PRFX}用法: &6/2fa enable <当前密码>&f 或 &6/2fa disable <totp 密钥> &f."
+    totp-wrong: "{PRFX}&c2FA 密钥错误!"
+    totp-already-enabled: "{PRFX}&c2FA已经开启. 使用 &6/2fa disable <密钥>&c 来禁用它."
+    totp-qr: "{PRFX}点击这里在浏览器中打开 2FA QR码."
+    totp-token: "{PRFX}&a你的 2FA 代号 &7(点击复制)&a: &6{0}"
+    totp-recovery: "{PRFX}&a你的恢复码 &7(点击复制)&a: &6{0}"
+    destroy-session-successful: "{PRFX}&e你的登录会话已结束,重新连接后你将需要输入密码."
+  auth-coords:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    yaw: 0.0
+    pitch: 0.0
+
+# Database settings
+database:
+  # Database type: mysql, postgresql or h2.
+  storage-type: "h2"
+  # Settings for Network-based database (like MySQL, PostgreSQL): 
+  hostname: "127.0.0.1:3306"
+  user: "user"
+  password: "password"
+  database: "limboauth"
+  connection-parameters: "?autoReconnect=true&initialTimeout=1&useSSL=false"
