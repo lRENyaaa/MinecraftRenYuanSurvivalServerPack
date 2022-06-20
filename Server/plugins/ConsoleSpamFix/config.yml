@@ -58,9 +58,6 @@ Messages-To-Hide-Filter:
 - 'The prefix you entered in your Floodgate config'
 - '******************************************'
 
-#ClockGUI无用信息屏蔽
-- '制作者QQ'
-
 #ViaBackward无用信息屏蔽
 - 'Ignoring plugin channel in incoming REGISTER'
 
@@ -89,7 +86,6 @@ Messages-To-Hide-Filter:
 - 'Failed to fetch latest builds for Metrics'
 - '未检测到 Quickshop-Reremake, 相关功能将自动关闭'
 
-
 #Residence下载失败信息屏蔽
 - 'Failed to download'
 
@@ -101,10 +97,6 @@ Messages-To-Hide-Filter:
 - 'Unable to check for updates'
 - '无法获取本地附件缓存'
 - '非法的本地下载和加载请求'
-
-#屏蔽问题不大的报错
-- 'Failed to automatic disable disable-move-event for world [spawn], please disable it by yourself or player can steal items from shops'
-- 'Virtual DisplayItem Support Test: Failed to initialize VirtualDisplayItem'
 
 ChatMessages:
     NoPermission: '&f[&6服务器&f] &f你没有权限'
