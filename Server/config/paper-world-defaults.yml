@@ -130,20 +130,7 @@ entities:
   spawning:
     all-chunks-are-slime-chunks: false
     alt-item-despawn-rate:
-      enabled: true
-      items:
-        COBBLESTONE: 300
-        NETHERRACK: 300
-        TOTEM_OF_UNDYING: 300
-        IRON_AXE: 200
-        GOLDEN_SWORD: 200
-        ROTTEN_FLESH: 300
-        ENDER_PEARL: 200
-        STRING: 200
-        WHEAT_SEEDS: 200
-        BONE: 200
-        SPIDER_EYE: 200
-        GUNPOWDER: 200
+      enabled: false
     count-all-mobs-for-spawning: false
     creative-arrow-despawn-rate: 20
     despawn-ranges:
