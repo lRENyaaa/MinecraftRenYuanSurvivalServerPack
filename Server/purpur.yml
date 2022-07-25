@@ -114,7 +114,7 @@ settings:
   disable-give-dropping: false
   tps-catchup: true
   server-mod-name: Purpur
-  use-alternate-keepalive: false
+  use-alternate-keepalive: true
   username-valid-characters: ^[a-zA-Z0-9_.]*$
   enchantment:
     allow-infinity-and-mending-together: false
@@ -1196,7 +1196,7 @@ world-settings:
           only-babies: true
           chance: 0.05
           try-existing-chickens: true
-        aggressive-towards-villager-when-lagging: true
+        aggressive-towards-villager-when-lagging: false
         bypass-mob-griefing: false
         takes-damage-from-water: false
         always-drop-exp: false
@@ -1437,10 +1437,10 @@ world-settings:
       projectiles-bypass-mob-griefing: false
       tick-fluids: true
       entity-blindness-multiplier: 1.0
-      trident-loyalty-void-return-height: 0.0
+      trident-loyalty-void-return-height: -10.0
       void-damage-height: -64.0
       void-damage-dealt: 4.0
-      raid-cooldown-seconds: 0
+      raid-cooldown-seconds: 600
       animal-breeding-cooldown-seconds: 0
       mobs-ignore-rails: false
       rain-stops-after-sleep: true

@@ -16,7 +16,7 @@ _version: 28
 anticheat:
   anti-xray:
     enabled: true
-    engine-mode: 2
+    engine-mode: 1
     hidden-blocks:
     - copper_ore
     - deepslate_copper_ore
@@ -59,27 +59,27 @@ anticheat:
       hide-itemmeta: false
 chunks:
   auto-save-interval: default
-  delay-chunk-unloads-by: 10s
+  delay-chunk-unloads-by: 5s
   entity-per-chunk-save-limit:
-    arrow: -1
-    ender_pearl: -1
-    experience_orb: -1
-    fireball: -1
-    small_fireball: -1
-    snowball: -1
+    arrow: 8
+    ender_pearl: 4
+    experience_orb: 10
+    fireball: 8
+    small_fireball: 8
+    snowball: 8
   fixed-chunk-inhabited-time: -1
-  max-auto-save-chunks-per-tick: 24
-  prevent-moving-into-unloaded-chunks: false
+  max-auto-save-chunks-per-tick: 12
+  prevent-moving-into-unloaded-chunks: true
 collisions:
   allow-player-cramming-damage: false
   allow-vehicle-collisions: true
-  fix-climbing-bypassing-cramming-rule: false
+  fix-climbing-bypassing-cramming-rule: true
   max-entity-collisions: 8
   only-players-collide: false
 entities:
   armor-stands:
-    do-collision-entity-lookups: true
-    tick: true
+    do-collision-entity-lookups: false
+    tick: false
   behavior:
     baby-zombie-movement-modifier: 0.5
     disable-chest-cat-detection: false
@@ -102,7 +102,7 @@ entities:
     mobs-can-always-pick-up-loot:
       skeletons: false
       zombies: false
-    nerf-pigmen-from-nether-portals: false
+    nerf-pigmen-from-nether-portals: true
     parrots-are-unaffected-by-player-movement: false
     phantoms-do-not-spawn-on-creative-players: true
     phantoms-only-attack-insomniacs: true
@@ -130,35 +130,46 @@ entities:
   spawning:
     all-chunks-are-slime-chunks: false
     alt-item-despawn-rate:
-      enabled: false
+      enabled: true
       items:
-        cobblestone: 300
+        COBBLESTONE: 300
+        NETHERRACK: 300
+        TOTEM_OF_UNDYING: 300
+        IRON_AXE: 200
+        GOLDEN_SWORD: 200
+        ROTTEN_FLESH: 300
+        ENDER_PEARL: 200
+        STRING: 200
+        WHEAT_SEEDS: 200
+        BONE: 200
+        SPIDER_EYE: 200
+        GUNPOWDER: 200
     count-all-mobs-for-spawning: false
-    creative-arrow-despawn-rate: default
+    creative-arrow-despawn-rate: 20
     despawn-ranges:
       ambient:
-        hard: 128
+        hard: 64
         soft: 32
       axolotls:
-        hard: 128
+        hard: 64
         soft: 32
       creature:
-        hard: 128
+        hard: 64
         soft: 32
       misc:
-        hard: 128
+        hard: 64
         soft: 32
       monster:
-        hard: 128
+        hard: 64
         soft: 32
       underground_water_creature:
-        hard: 128
+        hard: 64
         soft: 32
       water_ambient:
         hard: 64
         soft: 32
       water_creature:
-        hard: 128
+        hard: 64
         soft: 32
     disable-mob-spawner-spawn-egg-transformation: false
     duplicate-uuid:
@@ -167,7 +178,7 @@ entities:
     filter-nbt-data-from-spawn-eggs-and-related: true
     iron-golems-can-spawn-in-air: false
     monster-spawn-max-light-level: -1
-    non-player-arrow-despawn-rate: default
+    non-player-arrow-despawn-rate: 20
     per-player-mob-spawns: true
     scan-for-legacy-ender-dragon: true
     skeleton-horse-thunder-spawn-chance: 0.01
@@ -225,10 +236,10 @@ fixes:
   disable-unloaded-chunk-enderpearl-exploit: true
   falling-block-height-nerf: 0
   fix-curing-zombie-villager-discount-exploit: true
-  fix-items-merging-through-walls: false
+  fix-items-merging-through-walls: true
   fix-wither-targeting-bug: false
   prevent-tnt-from-moving-in-water: false
-  remove-corrupt-tile-entities: false
+  remove-corrupt-tile-entities: true
   split-overstacked-loot: true
   tnt-entity-height-nerf: 0
 hopper:
@@ -257,21 +268,21 @@ misc:
   disable-sprint-interruption-on-attack: false
   light-queue-size: 20
   max-leash-distance: 10.0
-  redstone-implementation: VANILLA
+  redstone-implementation: alternate-current
   shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
-  update-pathfinding-on-block-update: true
+  update-pathfinding-on-block-update: false
 scoreboards:
   allow-non-player-entities-on-scoreboards: false
   use-vanilla-world-scoreboard-name-coloring: false
 spawn:
   allow-using-signs-inside-spawn-protection: false
-  keep-spawn-loaded: true
+  keep-spawn-loaded: false
   keep-spawn-loaded-range: 10
 tick-rates:
   behavior:
     villager:
-      validatenearbypoi: -1
+      validatenearbypoi: 80
   container-update: 1
   grass-spread: 1
   mob-spawner: 1

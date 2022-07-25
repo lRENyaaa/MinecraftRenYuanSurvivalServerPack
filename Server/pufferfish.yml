@@ -15,7 +15,7 @@ dab:
   enabled: true
   # This value determines how far away an entity has to be
   # from the player to start being effected by DEAR.
-  start-distance: 12
+  start-distance: 8
   # This value defines how often in ticks, the furthest entity
   # will get their pathfinders and behaviors ticked. 20 = 1s
   max-tick-freq: 20
@@ -23,7 +23,7 @@ dab:
   # tick frequency. freq = (distanceToPlayer^2) / (2^value)
   # If you want further away entities to tick less often, use 7.
   # If you want further away entities to tick more often, try 9.
-  activation-dist-mod: 8
+  activation-dist-mod: 7
   # A list of entities to ignore for activation
   blacklisted-entities: []
 # Optimizes the suffocation check by selectively skipping
@@ -60,7 +60,7 @@ projectile:
   # Controls how many chunks a projectile
   # can load in its lifetime before it gets
   # automatically removed.
-  max-loads-per-projectile: 10
+  max-loads-per-projectile: 8
 # Whether or not asynchronous mob spawning should be enabled.
 # On servers with many entities, this can improve performance by up to 15%. You must have
 # paper's per-player-mob-spawns setting set to true for this to work.
