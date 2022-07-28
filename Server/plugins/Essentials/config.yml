@@ -535,8 +535,8 @@ allow-silent-join-quit: false
 # {ONLINE} - The number of players online.
 # {UNIQUE} - The number of unique players to join the server.
 # {UPTIME} - The amount of time the server has been online.
-custom-join-message: "&f[&6服务器&f] {USERNAME}加入了游戏"
-custom-quit-message: "&f[&6服务器&f] {USERNAME}退出了游戏"
+custom-join-message: "RenYuan-Core.server {USERNAME}加入了游戏"
+custom-quit-message: "RenYuan-Core.server {USERNAME}退出了游戏"
 
 # You can set a custom join message for users who join with a new username here.
 # This message will only be used if a user has joined before and have since changed their username.

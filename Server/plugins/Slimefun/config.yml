@@ -15,7 +15,7 @@
 options:
   auto-update: false
   backwards-compatibility: false
-  chat-prefix: '&f[&6服务器&f] '
+  chat-prefix: 'RenYuan-Core.server '
   armor-update-interval: 10
   enable-armor-effects: true
   auto-save-delay-in-minutes: 10

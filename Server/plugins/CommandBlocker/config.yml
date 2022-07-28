@@ -4,7 +4,7 @@ default pattern prefix: "(?i)^\\/"
 default pattern suffix: "(\\s|$)"
 # the suffix that is appended after all patterns
 
-default deny message: "§f[§6服务器§f] 未知的命令"
+default deny message: "RenYuan-Core.server 未知的命令"
 # the deny message if no filter specific message is set
 
 default type: blacklist

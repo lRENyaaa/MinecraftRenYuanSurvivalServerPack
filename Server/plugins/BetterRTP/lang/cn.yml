@@ -1,7 +1,7 @@
 # MCBBS 秋风残叶 授权搬运并汉化 请支持原作者SuperRonanCraft #
 # 原帖地址：https://www.spigotmc.org/resources/betterrtp.36081/ #
 Messages:
-  Prefix: '&f[&6服务器&f] '
+  Prefix: 'RenYuan-Core.server '
   Success:
     Paid: '&a你已经被传送到了&7 x=%x% y=%y% z=%z% 并支付了 &c$%price%&7金币!'
     Bypass: '&a你已经被传送到了&7 x=%x% y=%y% z=%z%'
@@ -34,20 +34,20 @@ Messages:
     Set: '&b成功! &7%type% 已设置为 %value%'
     Remove: '&c已移除! &7你移除了 %world%'
 Help:
-  Prefix: '&f[&6服务器&f] &e&m-----&6&l 随机传送 &8| Help &e&m-----'
-  Main: '&f[&6服务器&f] &7- &e/%command% &7- 使用随机传送'
-  Biome: '&f[&6服务器&f] &7- &e/%command% biome <群系1, 群系2...> &7- 随机传送至生物群系'
-  Edit: '&f[&6服务器&f] &7- &e/%command% edit <default/world> [args...] &7- 编辑配置'
-  Help: '&f[&6服务器&f] &7- &e/%command% help &7- 显示插件帮助'
-  Info: '&f[&6服务器&f] &7- &e/%command% info [world/particles/shapes/potion_effects]
+  Prefix: 'RenYuan-Core.server &e&m-----&6&l 随机传送 &8| Help &e&m-----'
+  Main: 'RenYuan-Core.server &7- &e/%command% &7- 使用随机传送'
+  Biome: 'RenYuan-Core.server &7- &e/%command% biome <群系1, 群系2...> &7- 随机传送至生物群系'
+  Edit: 'RenYuan-Core.server &7- &e/%command% edit <default/world> [args...] &7- 编辑配置'
+  Help: 'RenYuan-Core.server &7- &e/%command% help &7- 显示插件帮助'
+  Info: 'RenYuan-Core.server &7- &e/%command% info [world/particles/shapes/potion_effects]
     &7- 查看特定信息'
-  Player: '&f[&6服务器&f] &7- &e/%command% player <玩家名> [世界名] [群系1, 群系2...] &7- 传送至世界中任意玩家'
-  Reload: '&f[&6服务器&f] &7- &e/%command% reload &7- 重载插件'
-  Settings: '&f[&6服务器&f] &7- &e/%command% settings &7- 使用GUI菜单编辑配置'
-  Test: '&f[&6服务器&f] &7- &e/%command% test &7- 测试传送后的各种效果'
-  Version: '&f[&6服务器&f] &7- &e/%command% version &7- 当前插件版本'
-  World: '&f[&6服务器&f] &7- &e/%command% world <世界名> [群系1, 群系2...] &7- 随机传送至其它世界'
-  Location: '&f[&6服务器&f] &7- &e/%command% location <location_name> &7- 使用指定位置随机传送'
+  Player: 'RenYuan-Core.server &7- &e/%command% player <玩家名> [世界名] [群系1, 群系2...] &7- 传送至世界中任意玩家'
+  Reload: 'RenYuan-Core.server &7- &e/%command% reload &7- 重载插件'
+  Settings: 'RenYuan-Core.server &7- &e/%command% settings &7- 使用GUI菜单编辑配置'
+  Test: 'RenYuan-Core.server &7- &e/%command% test &7- 测试传送后的各种效果'
+  Version: 'RenYuan-Core.server &7- &e/%command% version &7- 当前插件版本'
+  World: 'RenYuan-Core.server &7- &e/%command% world <世界名> [群系1, 群系2...] &7- 随机传送至其它世界'
+  Location: 'RenYuan-Core.server &7- &e/%command% location <location_name> &7- 使用指定位置随机传送'
 Usage:
   Player: '&c用法&7: /%command% player <玩家> [世界] [群系1, 群系2...]'
   World: '&c用法&7: /%command% world <世界> [群系1, 群系2...]'

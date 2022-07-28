@@ -35,7 +35,7 @@ settings:
 messages:
   restart: 服务器重启中
   whitelist: You are not whitelisted on this server!
-  unknown-command: §f[§6服务器§f] 未知的命令
+  unknown-command: RenYuan-Core.server 未知的命令
   server-full: 服务器人满了!
   outdated-client: 客户端版本过老! 请使用 {0}
   outdated-server: 客户端版本过新! 请使用 {0}

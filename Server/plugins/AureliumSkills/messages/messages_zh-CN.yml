@@ -368,7 +368,7 @@ action_bar:
   boss_bar_xp: '&6{skill} {level} &7({current_xp}/{level_xp} {xp_unit})'
   boss_bar_maxed: '&6{skill} {level} &7(满级)'
 commands:
-  prefix: '&f[&6服务器&f] '
+  prefix: 'RenYuan-Core.server '
   armor:
     modifier:
       add:
@@ -526,9 +526,9 @@ commands:
     global: 全局
     skill_entry: '&b{skill} &f经验值 翻倍倍数: &b{multiplier}x / +{percent}%'
   rank:
-    header: '&f[&6服务器&f] &b&l技能排名'
-    power: '&&f[&6服务器&f] &e战力 &7(技能综合): &f#{rank}, 总第 {total} 名'
-    entry: '&f[&6服务器&f] &b{skill}&7: &f#{rank} of {total}'
+    header: 'RenYuan-Core.server &b&l技能排名'
+    power: '&RenYuan-Core.server &e战力 &7(技能综合): &f#{rank}, 总第 {total} 名'
+    entry: 'RenYuan-Core.server &b{skill}&7: &f#{rank} of {total}'
   reload: '&a配置已重新加载!'
   save:
     already_saving: '&e数据已正在保存!'
@@ -549,16 +549,16 @@ commands:
     disabled: '&c技能状态显示栏已关闭'
     not_enabled: '&e此服务器未启用技能状态栏!'
   top:
-    power_entry: '&f[&6服务器&f] &f{rank}. &b{player} &f- {level}'
-    power_header: '&f[&6服务器&f] &f--==&b&l技能综合排行榜&f==--'
-    power_header_page: '&f[&6服务器&f] &f--==&b&l技能综合排行榜 &f(第 {page} 页)==--'
-    skill_header: '&f[&6服务器&f] &f--==&b&l技能 {skill} 排行榜&f==--'
-    skill_header_page: '&f[&6服务器&f] &f--==&b&l技能 {skill} 排行榜&f(第 {page} 页)==--'
-    skill_entry: '&f[&6服务器&f] &f{rank}. &b{player} &f- {level}'
-    average_header: '&f[&6服务器&f] &f--==&b&l技能综合排行榜&f==--'
-    average_header_page: '&f[&6服务器&f] &f--==&b&l技能综合排行榜&f(第 {page} 页)==--'
-    average_entry: '&f[&6服务器&f] &f{rank}. &b{player} &f- {level}'
-    usage: '&f[&6服务器&f] &e提示: &a/sk top &f<page> &7 或 &a/sk top &f[skill] <page>'
+    power_entry: 'RenYuan-Core.server &f{rank}. &b{player} &f- {level}'
+    power_header: 'RenYuan-Core.server &f--==&b&l技能综合排行榜&f==--'
+    power_header_page: 'RenYuan-Core.server &f--==&b&l技能综合排行榜 &f(第 {page} 页)==--'
+    skill_header: 'RenYuan-Core.server &f--==&b&l技能 {skill} 排行榜&f==--'
+    skill_header_page: 'RenYuan-Core.server &f--==&b&l技能 {skill} 排行榜&f(第 {page} 页)==--'
+    skill_entry: 'RenYuan-Core.server &f{rank}. &b{player} &f- {level}'
+    average_header: 'RenYuan-Core.server &f--==&b&l技能综合排行榜&f==--'
+    average_header_page: 'RenYuan-Core.server &f--==&b&l技能综合排行榜&f(第 {page} 页)==--'
+    average_entry: 'RenYuan-Core.server &f{rank}. &b{player} &f- {level}'
+    usage: 'RenYuan-Core.server &e提示: &a/sk top &f<page> &7 或 &a/sk top &f[skill] <page>'
   updateleaderboards:
     already_updating: '&e排行榜正在更新!'
     updated: '&a排行榜更新成功!'
@@ -572,29 +572,29 @@ commands:
 leveler:
   title: '&a{skill} 等级提升'
   subtitle: '&6{old} ➜ {new}'
-  level_up: "&f[&6服务器&f] &3&m----------------------------------------\n&f[&6服务器&f]\
-    \ &r &3技能成功升级! &b&l{skill} &8{old}➜&3&l{new}\n&f[&6服务器&f]  \n&f[&6服务器&f]  &b升级\
+  level_up: "RenYuan-Core.server &3&m----------------------------------------\nRenYuan-Core.server\
+    \ &r &3技能成功升级! &b&l{skill} &8{old}➜&3&l{new}\nRenYuan-Core.server  \nRenYuan-Core.server  &b升级\
     奖励:{stat_level}{ability_unlock}{ability_level_up}{mana_ability_unlock}{mana_ability_level_up}{money_reward}\n\
-    &f[&6服务器&f] &3&m----------------------------------------"
+    RenYuan-Core.server &3&m----------------------------------------"
   stat_level: |2-
 
-    &f[&6服务器&f]   {color}+{num} {symbol} {stat}
+    RenYuan-Core.server   {color}+{num} {symbol} {stat}
   ability_unlock: |2-
 
-    &f[&6服务器&f]   &a技能解锁! &6&l{ability} &7已被解锁
+    RenYuan-Core.server   &a技能解锁! &6&l{ability} &7已被解锁
   ability_level_up: |2-
 
-    &f[&6服务器&f]   &a技能升级! &6&l{ability} &7现在等级为 &6{level} &7级
+    RenYuan-Core.server   &a技能升级! &6&l{ability} &7现在等级为 &6{level} &7级
   mana_ability_unlock: |2-
 
-    &f[&6服务器&f]   &d魔法技能解锁! &9&l{mana_ability} &7已被解锁
+    RenYuan-Core.server   &d魔法技能解锁! &9&l{mana_ability} &7已被解锁
   mana_ability_level_up: |2-
 
-    &f[&6服务器&f]   &d魔法技能升级! &9&l{mana_ability} &7现在等级为l &6{level} &7级
+    RenYuan-Core.server   &d魔法技能升级! &9&l{mana_ability} &7现在等级为l &6{level} &7级
   money_reward: |2-
 
-    &f[&6服务器&f]   &a${amount}
-  unclaimed_item: '&f[&6服务器&f] &c因为背包已满, 部分无法存储在物品栏的物品已被转移至临时存储区. 请输入 &e/skills claimitems
+    RenYuan-Core.server   &a${amount}
+  unclaimed_item: 'RenYuan-Core.server &c因为背包已满, 部分无法存储在物品栏的物品已被转移至临时存储区. 请输入 &e/skills claimitems
     &c及时领取这些物品.'
 menus:
   common:

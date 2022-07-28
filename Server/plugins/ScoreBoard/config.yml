@@ -25,11 +25,11 @@ Settings:
 #计分板更新间隔
   Refresh-rate: 7
 Messages:
- ScoreBoard-Hide: '§f[§6服务器§f] 计分板已被隐藏'
- ScoreBoard-Show: '§f[§6服务器§f] 计分板已被启用'
- No-Permission: '§f[§6服务器§f] 你没有权限使用这个指令'
- Config-Reload: '§f[§6服务器§f] 配置已重载！'
- ScoreBoard-Toggle-Disabled-World: '§f[§6服务器§f] 计分板已在这个世界被禁用'
+ ScoreBoard-Hide: 'RenYuan-Core.server 计分板已被隐藏'
+ ScoreBoard-Show: 'RenYuan-Core.server 计分板已被启用'
+ No-Permission: 'RenYuan-Core.server 你没有权限使用这个指令'
+ Config-Reload: 'RenYuan-Core.server 配置已重载！'
+ ScoreBoard-Toggle-Disabled-World: 'RenYuan-Core.server 计分板已在这个世界被禁用'
  #权限:
  #sb.toggle - 允许使用 /sb toggle
  #sb.reload - 允许使用 /sb reload

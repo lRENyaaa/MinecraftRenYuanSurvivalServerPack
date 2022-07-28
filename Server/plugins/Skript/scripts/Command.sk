@@ -19,7 +19,7 @@ command /signincheck:
 command /renaaspawn <player>:
     trigger:
         if command sender is not the console:
-            send "§f[§6服务器§f] 你不能使用这个指令" to player
+            send "RenYuan-Core.server 你不能使用这个指令" to player
         else:
             argument is online
             send "§7[§3平民§7] RENaa_FD: 你好,%argument%" to argument

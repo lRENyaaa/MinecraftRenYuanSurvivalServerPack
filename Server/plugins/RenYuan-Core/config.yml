@@ -1,0 +1,154 @@
+#任渊生存服务端功能核心插件
+#此插件集成了一些我自己写的功能和服务端数据统计
+#你可以在 https://github.com/lRENyaaa/RenYuan-Core 查看本插件源代码
+
+#防爆模块
+NotBoom:
+  #是否启用
+  Enable: true
+  #true开启保护 false关闭保护
+  #TNT爆炸
+  TNT: true
+  #末影水晶爆炸
+  EnderCrystal: true
+  #苦力怕爆炸
+  Creeper: true
+  #凋零头爆炸
+  WitherSkull: true
+  #凋零生成爆炸
+  Wither: true
+  #火焰弹爆炸
+  FireBall: true
+  #TNT矿车
+  TNTMinecart: true
+  #凋零破坏
+  WitherDestroy: true
+  #方块爆炸(重生锚和床)
+  BlockExplode: true
+  #其他爆炸(未知原因的)
+  Other: false
+
+#本服务端使用CStats来获取服务端使用统计
+#数据统计可以前往 http://cstats.iroselle.com/plugin/bukkit/RenYuan-Core 查看
+Metrics:
+  #是否启用
+  Enable: true
+
+#基岩版玩家名称保护
+#这是用于防止Java版玩家使用基岩版玩家前缀进入服务器的
+#因为在同一个UUID下不同玩家名称可能会导致未知的问题
+#你如果对Floodgate插件的详细功能不够清楚,请不要动它
+AntiUserName:
+  Enable: true
+
+#基岩版玩家Tpa菜单
+#此功能只支持ESS和CMI,不支持Sunlight等其他基础插件
+#此功能可以让你在输入tpa指令后的对方收到对应传送菜单
+#此功能需要BEMenuAPI作为基岩版菜单前置
+#BEMenuAPI下载: https://github.com/zimzaza4/Skript-Floodgate-Form
+BedrockTpaMenu:
+  #是否启用
+  Enable: true
+  #同意传送时发送的命令
+  AcceptCommand: "tpaccept"
+  #拒绝传送时发送的命令
+  DenyCommand: "tpdeny"
+  #发送菜单时的信息
+  Message:
+    #此处 %s 为玩家名
+    #Tpa时form菜单显示的信息
+    TpaInfo: "%s 想要让他传送到你这里"
+    #Tpahere时form菜单显示的信息
+    TpahereInfo: "%s 想要让你传送到他那里"
+    #未知的传送类型时form菜单显示的信息
+    UnknownTpInfo: "未知的传送方式,来自 %s"
+  #发送菜单时的选项配置
+  Form:
+    #发送的form菜单的标题
+    Title: "传送菜单"
+    #同意传送按钮显示的文字
+    AcceptButton: "同意传送"
+    #同意传送按钮显示的图标
+    AcceptIcon: "textures/ui/realms_green_check.png"
+    #拒绝传送按钮显示的文字
+    DenyButton: "拒绝传送"
+    #拒绝传送按钮显示的图标
+    DenyIcon: "textures/ui/realms_red_x.png"
+
+#基岩版玩家死亡重生时的菜单
+#此功能需要BEMenuAPI作为基岩版菜单前置
+#BEMenuAPI下载: https://github.com/zimzaza4/Skript-Floodgate-Form
+BedrockRespawnMenu:
+  Enable: true
+
+#启用防讲台崩服
+#如果你已经使用了具有类似效果的插件或者服务器版本高于1.18.2,可以关闭它
+LecternCrashFix:
+  #是否启用
+  Enable: true
+
+#自定义插件所发送的信息
+Message:
+  #发送信息时的前缀
+  Prefix: "RenYuan-Core.server "
+  #没有权限
+  NoPerMission: "你没有权限"
+  #需要玩家执行的指令提示
+  PlayerCommand: "仅玩家可执行该命令"
+  #回到主城的提示
+  PlayerSpawn: "已将你传送到主城"
+  #设置主城的提示
+  SetSpawn: "已设置主城位置"
+
+#检测基岩版玩家是否使用了PocketUI
+#代码参考来自 https://github.com/zimzaza4/BedrockPocketUIWarn
+GeyserPocketUICheck:
+  #是否启用
+  Enable: false
+  #是否踢出玩家
+  Kick:
+    Enable: false
+    #踢出玩家后发送的信息
+    Message: "请将设置选项视频中的UI档案设置为经典"
+  #是否向玩家发送信息(在不踢出玩家的情况下)
+  SendMessage:
+    Enable: true
+    #向玩家发送的信息
+    Message: "服务器不能完美兼容PocketUI,请将设置选项视频中的UI档案设置为经典以提升你的游戏体验"
+
+#用于测试的一些功能
+GeyserFeature:
+  #是否在基岩版玩家加入服务器时向后台发送玩家的客户端信息
+  SendClientInfo: false
+
+#实验性功能
+#请不要随意启用或修改
+TestFeature:
+  Enable: true
+  ResourcePackSender: true
+  ResourceUrl: "https://hub.fastgit.xyz/lRENyaaa/RYServerTexture/releases/download/v1.2/Pack.zip"
+  ResourceHash: "328f8bf1950c9277f3fe8e57d7ae4f35d1d712ef"
+  CharacterReplacer: true
+
+#禁止在某个世界圈地
+#此功能不会使/res tp此类命令在这个世界失效
+ResCreateLimit:
+  - otd_dungeon
+  - spawn
+
+#主城相关
+Spawn:
+  #是否启用,如果你已经安装了相似功能的主城插件可以关闭
+  Enable: true
+  #是否启用主城保护,如果你没安装保护类插件则不建议关闭
+  Protect: true
+  #是否关闭主城伤害,除了kill以外所有伤害将会被全部禁用,包括虚空
+  NoDamage: true
+  #是否锁定出生点,每次重生都会回到主城而不是这个世界的出生点
+  LockSpawn: true
+  #主城的世界名
+  World: "spawn"
+  #主城坐标
+  X: 79.5
+  Y: 105.0
+  Z: -148.5

@@ -110,7 +110,7 @@
 info:
   # Use !prefix! in any locale line to automatically include this prefix
   prefix: '&e[&aCMI&e] '
-  NoPermission: '&f[&6服务器&f] 你没有权限'
+  NoPermission: 'RenYuan-Core.server 你没有权限'
   CantHavePermission: '&cYou can''t have this permission!'
   WrongGroup: '&cYou are in wrong group for this!'
   NoPlayerPermission: '&c[playerName] 没有权限: [permission]'

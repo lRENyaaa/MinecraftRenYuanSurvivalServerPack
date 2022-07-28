@@ -105,6 +105,6 @@ Messages-To-Hide-Filter:
 - '非法的本地下载和加载请求'
 
 ChatMessages:
-    NoPermission: '&f[&6服务器&f] &f你没有权限'
-    CmdHelp: '&f[&6服务器&f] &f可用的命令: /csf reload'
-    CmdReload: '&f[&6服务器&f] &f配置重载完成'
+    NoPermission: 'RenYuan-Core.server &f你没有权限'
+    CmdHelp: 'RenYuan-Core.server &f可用的命令: /csf reload'
+    CmdReload: 'RenYuan-Core.server &f配置重载完成'
